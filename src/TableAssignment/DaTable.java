@@ -5,7 +5,7 @@ package src.TableAssignment;
  * @author jonah
  */
 public class DaTable {
-	private Data[] table = new Data[(int) Math.pow(2,16)];
+	public Data[] table = new Data[(int) Math.pow(2,16)];
 	
 	/**
 	 * Searches for the value at key k in the table
