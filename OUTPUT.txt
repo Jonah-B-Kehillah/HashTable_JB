@@ -1,0 +1,9 @@
+Direct Address Table Tests
+Test #1 passed (Data.insert())
+Test #2 passed (Data.insert())
+Test #3 passed (Data.delete())
+Test #4 passed (Data.delete())
+Test #5 passed (Data.search())
+Test #6 passed (Data.search())
+
+Tests passed: 6, Tests failed: 0
