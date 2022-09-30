@@ -1,35 +1,37 @@
 package src.TableAssignment;
 
-import javax.xml.crypto.dsig.keyinfo.KeyName;
-import java.security.KeyException;
-import java.time.temporal.ValueRange;
-
 /**
  * Direct-Address Table
  * @author jonah
- * @param <T> The class of object to be stored in the table
  */
-public class DaTable<T> {
-	private T[] data = (T[]) new Object[(int) Math.pow(2,16)];
+public class DaTable {
+	private Data[] table = new Data[(int) Math.pow(2,16)];
 	
 	/**
-	 * Returns the value at
-	 * @param k Key to get value from
-	 * @return The value at given key, assuming a value exists there
-	 * @throws KeyException if no value is present at the given key
+	 * Searches for the value at key k in the table
+	 * @param k The key to search at
+	 * @return The value at the given key, assuming such a value exists, otherwise null
 	 */
-	public T search(int k) throws KeyException {}
-	
-	/**
-	 *
-	 * @param k
-	 * @param value
-	 * @param ow
-	 * @throws IllegalAccessError
-	 */
-	public void insert(int k, T value, boolean ow) throws IllegalAccessError {
-	
+	public Data search(int k) {
+		return table[k];
 	}
-	public void insert(int k, T value) throws IllegalAccessError {this.insert(k,value);}
+	
+	/**
+	 * Inserts instance of class Data at key contained in said instance
+	 * @param x Instance of Data class to be inserted
+	 */
+	public void insert(Data x) {
+		table[x.getKey()] = x;
+	}
+	
+	/**
+	 * Deletes data value x from table
+	 * @param x Data value to delete
+	 */
+	public void delete(Data x) {
+		if(table[x.getKey()] == x) { // There may be a different value at x's key
+			table[x.getKey()] = null;
+		}
+	}
 	
 }
