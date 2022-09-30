@@ -1,4 +1,4 @@
 package src.TableAssignment;
 
-public class HashTable {
+public class HashTable<T> {
 }
